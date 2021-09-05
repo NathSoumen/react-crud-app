@@ -1,6 +1,6 @@
 import axios from 'axios'
 import React, { Component } from 'react'
-
+import api from '../../components/api'
 export default class Register extends Component {
     constructor(props) {
         super(props)
@@ -17,7 +17,7 @@ export default class Register extends Component {
     formHandler = async (e) => {
         e.preventDefault()
         if (this.state.isSignup === false) {
-            await axios.post("http://localhost:5000/api/users/login", {
+            await api.post("/users/login", {
                 email: this.state.email,
                 password: this.state.password
             }).then(doc => {
@@ -50,7 +50,7 @@ export default class Register extends Component {
 
         } else {
             e.preventDefault()
-            await axios.post("http://localhost:5000/api/users/signup", {
+            await api.post("/users/signup", {
                 username: this.state.username,
                 email: this.state.email,
                 password: this.state.password
