@@ -50,7 +50,7 @@ export default class Register extends Component {
 
         } else {
             e.preventDefault()
-            await axios.post("http://127.0.0.1:5000/api/users/signup", {
+            await axios.post("http://localhost:5000/api/users/signup", {
                 username: this.state.username,
                 email: this.state.email,
                 password: this.state.password
