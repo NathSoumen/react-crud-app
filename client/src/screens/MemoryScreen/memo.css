@@ -1,0 +1,59 @@
+
+
+.memo-head{
+    border: 1px solid rgba(0, 0, 0, 0.623);
+    border-radius: 7px;
+    margin: 1rem;
+    padding: 1rem;
+    background-color: rgb(243, 242, 242);
+    outline: none;
+    height: 30rem;
+}
+.memo-head .memo-title {
+    text-align: center;
+    font-weight: 600;
+}
+
+.memo-image-container{
+    width: 50%;
+    height: max-content;
+}
+ .memo-image-img {
+     align-self: center;
+    object-fit: contain;
+    max-width: 80%;
+    min-width: 40%;
+
+} 
+
+.memo-details{
+    border: 1px solid rgba(0, 0, 0, 0.623);
+    border-radius: 7px;
+    margin: 1rem;
+    padding: 1rem;
+    background-color: rgb(243, 242, 242);
+}
+
+.memo-desc {
+    margin: 1rem;
+    padding: 0.1rem;
+}
+
+.memo-button a {
+    background-color: orange;
+    padding:0.5rem  4rem;
+    margin: 1rem;
+    border-radius: 7px;
+    color:black;
+    transition: all 0.3s ease-in-out;
+}
+.memo-button a:hover {
+    background-color: rgb(121, 106, 69);
+    color: linen;
+}
+@media screen and (max-width:700px) {
+    .memo-image-container {
+        width: 100%;
+        padding-bottom: 0;
+    }
+}

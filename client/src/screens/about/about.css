@@ -1,0 +1,103 @@
+.section-1 {
+    height: 100%;
+    width: 100%;
+    background-color: rgba(8, 8, 8, 0.726);
+}
+
+/* intro */
+.intro {
+    display: flex;
+    align-items: center;
+    text-align: center;
+    flex-direction: column;
+    /* padding: 5rem 1rem 0 1rem; */
+    margin-bottom: 0;
+    background-color: rgba(0, 0, 0, 0.616);
+    height: 40rem;
+}
+.hello {
+    padding: 15rem 5rem 20rem 5rem;
+}
+.intro h1, .intro h3 {
+    color: rgb(247, 247, 247);
+}
+.intro h3 span{
+    color: rgba(255, 1, 1, 0.753);
+}
+.dream{
+    color: rgba(43, 165, 165, 0.521);
+}
+
+
+/* about-me */
+.about-me-heading {
+    font-size: 2.5rem;
+    color: rgba(255, 255, 255, 0.836);
+}
+.about-me {
+    display: flex;
+    background-color: rgba(82, 100, 104, 0.459);
+    height: 30rem;
+    align-items: center;
+}
+
+.skills,.hobby {
+    text-align: center;
+    padding: 1rem;
+    width: 50%;
+}
+.skills h4, .hobby h4{
+    padding: 0.5rem;
+    color: rgb(122, 136, 148);
+    font-weight: 600;
+    font-size: 1.5rem;
+    font-style: italic;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+/* contact me */
+.contact_me {
+    display: flex;
+    background-color: rgba(29, 26, 26, 0.589);
+    height: max-content;
+    align-items: center;
+    justify-content: space-evenly;
+}
+.contact{
+    color: rgb(122, 136, 148);
+    padding: 2rem 1rem;
+    background-color: rgba(22, 22, 29, 0.452);
+    text-align: center;
+    font-family: Arial, Helvetica, sans-serif;
+    border-radius: 20px;
+    font-weight: 600;
+    margin: 1rem;
+}
+.footer{
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+    text-align: center;
+    color: goldenrod;
+    padding: 0;
+    margin: 0;
+    font-size: 2rem;
+    height: 5rem;
+    background-color: rgba(8, 8, 8, 0.726);
+}
+
+
+@media screen and (max-width:700px) {
+    .contact_me{
+        flex-direction: column;
+    }
+    .about-me-heading {
+        font-size: 1.5rem;
+    }
+    .skills h4, .hobby h4{
+        font-size: 1rem;
+    }
+    .skills,.hobby {
+        padding: 0.5rem;
+    }
+}

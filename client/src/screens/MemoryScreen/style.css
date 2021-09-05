@@ -1,0 +1,77 @@
+.Mem-form {
+    margin: 5rem 0;
+    width: 100%;
+    padding: 0 10rem;
+    height: 2rem;
+}
+div.memo-image-container-head {
+    align-items: center;
+   min-width: 30px;
+   height: 100%;
+   max-width: 30rem;
+   padding: 1rem;
+}
+.memo-img-head {
+    object-fit: contain;
+    max-width: 100%;
+}
+.memo_item {
+    display: flex;
+    justify-content: flex-start;
+    margin: 1rem;
+    
+    border: 1px solid #596f8325;
+    padding: 0.5rem;
+    border-radius: 7px;
+    background-color: rgba(200, 204, 206, 0.356);
+}
+.memoray-desc {
+    margin-left: 10rem;
+    padding: 1rem;
+}
+.memo_item h1 {
+    font-size: 1.8rem;
+    font-weight: 600;
+    color: rgb(99, 99, 184);
+}
+.memo_item h5.author {
+    font-style: italic;
+    font-size: 1rem;
+    color: rgb(11, 19, 121);
+    font-weight: 600;
+} 
+.memo_item p.desc{
+    line-height:1.9rem;
+    color: #020202;
+}
+
+.read-more {
+    border-radius: 7px;
+    padding: 0.5rem;
+    background-color: rgb(12, 6, 6);
+    border:  1px solid blue;
+    width: 8rem;
+    text-align: center;
+    font-size: 1rem;
+    color:rgb(18, 18, 245);
+    transition: all 0.3s ease-in-out;
+}
+.read-more:hover {
+    cursor: pointer;
+    color: #fff;
+}
+
+@media screen and (max-width:900px) {
+    .Mem-form{
+        margin: 5rem 0;
+        padding: 0 2rem;
+
+    }
+    .memoray-desc {
+        margin-left: 0.2rem;
+        padding: 1rem;
+    }
+    .memo_item {
+        flex-direction: column;
+    }
+}
