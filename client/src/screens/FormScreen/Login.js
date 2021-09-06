@@ -70,7 +70,7 @@ export default class Register extends Component {
             setTimeout(() => {
                 this.setState({giveMessage:true})
 
-            },600)
+            },300)
             this.setState({
                 username: "",
                 email: "",
@@ -105,7 +105,7 @@ export default class Register extends Component {
             return (
                 
                 <div className="form-main">
-                {this.state.giveMessage && (<h1 style={{color:"red",padding:"1rem"}}> {this.state.isSignup ? this.state.message : "Please check email"}</h1>)}
+                {this.state.giveMessage && (<h1 className="form-message" style={{color:"red",padding:"1rem", }}> {this.state.isSignup ? this.state.message : "Please check email"}</h1>)}
                    
                     <form className="form" onSubmit={this.formHandler}>
                         <div className="form-ctl">

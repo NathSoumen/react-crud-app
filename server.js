@@ -41,7 +41,7 @@ app.use(function(req, res, next) {
 
 
 app.use("/api/users", userRoutes)
-app.use("/api/memo",verifyJWT, memoRoutes)
+app.use("/api/memo", memoRoutes)
 
 // for deployment
 if(process.env.NODE_ENV === "production") {

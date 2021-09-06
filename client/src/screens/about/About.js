@@ -10,7 +10,7 @@ export default function About() {
                         <h1>Hello Friend</h1>
                         <h3>I'm <span>Soumen</span></h3>
                         <div>
-                        <h4 className="dream">Dream to beacome a Full Stack Web Developer</h4>
+                        <h4 className="dream">Inspire to become a Full Stack Web Developer</h4>
                     </div>
                     </div>
                     

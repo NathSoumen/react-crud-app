@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import api from '../../components/api'
 import './memo.css'
-// import sea from "https://www.hdwallpapers.in/download/tricolor_indian_flag_independence_day_4k_hd_indian_flag-1366x768.jpg"
 import { Redirect } from 'react-router'
 
 export default function Memo(props) {

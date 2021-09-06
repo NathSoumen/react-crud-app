@@ -2,6 +2,7 @@ const Memo = require('../models/MemoModels')
 const router = require('express').Router()
 const User = require('../models/User')
 const multer  = require('multer');
+const { verifyJWT } = require('../config/isAuthenticated');
 
 const storage = multer.diskStorage({
     destination:(req,file,callback) =>{
@@ -13,6 +14,7 @@ const storage = multer.diskStorage({
 })
 
 const upload = multer({storage:storage})
+
 
 router.get('/', async(req,res) => {
     try {
@@ -44,7 +46,7 @@ router.get('/:id', async(req,res) => {
     }
 })
 
-router.post("/add",upload.single("memoImage"), async(req,res) => {
+router.post("/add",verifyJWT,upload.single("memoImage"), async(req,res) => {
     try {
         const title = req.body.title;
         const description = req.body.description;
@@ -67,7 +69,7 @@ router.post("/add",upload.single("memoImage"), async(req,res) => {
     }
 })
 
-router.get('/mypost/:id', async(req,res) => {
+router.get('/mypost/:id',verifyJWT, async(req,res) => {
     try {
         await Memo.find({authorId:req.params.id}).then(memo => {
             if(!memo || memo === null ) {
@@ -84,7 +86,7 @@ router.get('/mypost/:id', async(req,res) => {
         res.json("Error incurred")
     }
 })
-router.put("/update/:id", upload.single("memoImage"),async(req,res) => {
+router.put("/update/:id",verifyJWT ,upload.single("memoImage"),async(req,res) => {
 
         const title = req.body.title;
         const description = req.body.description;
@@ -112,7 +114,7 @@ router.put("/update/:id", upload.single("memoImage"),async(req,res) => {
     }
 })
 
-router.delete("/:id/delete" ,(req,res) => {
+router.delete("/:id/delete",verifyJWT ,(req,res) => {
     Memo.findByIdAndDelete(req.params.id).then(() => {
         res.json("File is deleted")
     }).catch(err => {

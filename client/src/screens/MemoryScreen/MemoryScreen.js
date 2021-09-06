@@ -2,10 +2,13 @@ import React, { useEffect, useState } from 'react'
 import { Link } from 'react-router-dom'
 import api from '../../components/api'
 import MemItem from './MemItem'
-
+import  Pagination  from '../pagination/Pagination'
 export default function MemoryScreen() {
     const [memos, setMemos] = useState([])
     const [tokenFound,settokenFound] = useState(false)
+    const [correntPage, setCurrentPage] = useState(1)
+    const [postPerPage] = useState(5)
+    const [loading,setLoading] = useState(false)
 
    
     useEffect(() => {
@@ -20,12 +23,12 @@ export default function MemoryScreen() {
            settokenFound(true)           
            }
        async function apiHandle(){
-        api.get('/memo').then(doc => {
+       await api.get('/memo').then(doc => {
             console.log(doc.data.error)
             if(doc.data.error === true) {
                 return null
             }
-            
+            setLoading(false)
             setMemos(doc.data)
         }).catch(err => {
             console.log(err)
@@ -39,20 +42,34 @@ export default function MemoryScreen() {
         
     }, [])
 
-   
+//    get current posts
+    const indexOfLastPost = correntPage * postPerPage;
+    const indexOfFirstPost = indexOfLastPost - postPerPage;
+    const currentPosts     =  memos.slice(indexOfFirstPost,indexOfLastPost)
 
+    // change page 
+    const paginate = (pagesNumber) =>{
+        setCurrentPage(pagesNumber)
+    }
+    if(loading) {
+        return <h2>Loading ....</h2>
+    } 
     return (
         <div>
 
-         {(tokenFound && (memos !==null)) ?
-                memos.map((memo) => {
-                    return <MemItem key={memo._id} memo={memo}/>
-                })
-            :(
+         {(tokenFound && (memos !==null)) &&
+           <div>
+              {(correntPage !==1) && (
+                   <h2 style={{textAlign:'center', fontSize:"1.5rem" , padding:"0.5rem"}}>page {correntPage}</h2>
+              )}  
+            {   
                 
-           <Link style={{color:"red", textAlign:"center",padding:'1rem'}} to="/user"><h1>Please login</h1></Link>
-       
-            )}           
+                currentPosts.map((memo) => {
+                    return <MemItem key={memo._id} memo={memo} correntPage={correntPage}/>
+                })}
+            <Pagination postsPerPage={postPerPage} totalpost={memos.length} paginate={paginate}/>
+            </div>
+            }           
         </div>
     )
 }

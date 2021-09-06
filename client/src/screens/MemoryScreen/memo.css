@@ -1,13 +1,19 @@
 
-
+.memo-div {
+    display: flex;
+    flex-direction: column;
+    width: 100%;height: 100%;
+}
 .memo-head{
+    display: flex;
+    flex-direction: column;
     border: 1px solid rgba(0, 0, 0, 0.623);
     border-radius: 7px;
-    margin: 1rem;
-    padding: 1rem;
+    margin: 2%  22% 2% 22%;
+    padding: 3% 10%;
     background-color: rgb(243, 242, 242);
     outline: none;
-    height: 30rem;
+    height: 20%;
 }
 .memo-head .memo-title {
     text-align: center;
@@ -15,21 +21,23 @@
 }
 
 .memo-image-container{
-    width: 50%;
-    height: max-content;
+    width: 100%;
+    height: 100%;
 }
  .memo-image-img {
-     align-self: center;
     object-fit: contain;
     max-width: 80%;
-    min-width: 40%;
+    max-height: 80%;
+    padding: 0  ;
+    margin-left: 1.9rem;
 
 } 
 
 .memo-details{
+    text-align: center;
     border: 1px solid rgba(0, 0, 0, 0.623);
     border-radius: 7px;
-    margin: 1rem;
+    margin: 0 20rem 0 20rem;
     padding: 1rem;
     background-color: rgb(243, 242, 242);
 }
@@ -55,5 +63,11 @@
     .memo-image-container {
         width: 100%;
         padding-bottom: 0;
+    }
+    .memo-details {
+        margin: 1rem 2.5rem 1.5rem 2.3rem;
+    }
+    .memo-head {
+        margin: 2%  8% 0 8%;
     }
 }

@@ -7,6 +7,7 @@ import MemoryScreen from "./screens/MemoryScreen/MemoryScreen";
 import EditMemory from './screens/MemoryScreen/EditMemory'
 import About from "./screens/about/About";
 import Mypost from "./screens/MemoryScreen/Mypost";
+import Errorpage from './Errorpage'
 function App() {
   return (
     
@@ -20,7 +21,8 @@ function App() {
           <Route path="/mypost"  component={Mypost} />
           <Route path="/memo/add"  component={AddMemory} /> 
           <Route path="/memo/:id/edit"  component={EditMemory} />  
-          <Route path="/memo/:id"  component={Memo} />  
+          <Route path="/memo/:id"  component={Memo} /> 
+          <Route path="*"  component={Errorpage} /> 
       </Switch>
     </div>
     </BrowserRouter>
