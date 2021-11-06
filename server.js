@@ -12,7 +12,7 @@ const memoRoutes = require('./routes/memoRoutes');
 const { verifyJWT } = require('./config/isAuthenticated');
 const app = express()
 try {
-    mongoose.connect(process.env.URI, { useNewUrlParser: true, useUnifiedTopology: true, useCreateIndex: true }).then(() => {
+    mongoose.connect(process.env.DB, { useNewUrlParser: true, useUnifiedTopology: true, useCreateIndex: true }).then(() => {
         console.log("Database is connected")
     },(err) => {
         console.lo(err)
